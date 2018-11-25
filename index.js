@@ -15,7 +15,7 @@ const app = express();
 
 app.use('/', express.static(__dirname + '/static'));
 app.post('/upload', upload.single('upload'), (req, res, next) => {
-    res.send("success");
+    res.sendFile(__dirname + '/static/success.html');
 });
 
 app.listen(8000, () => {
